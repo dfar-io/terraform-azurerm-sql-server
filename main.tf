@@ -1,5 +1,5 @@
 resource "random_string" "dbServerPassword" {
-  length  = 24
+  length  = 32
   special = false
 }
 
