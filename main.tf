@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "~> 2.33.0"
+    }
+  }
+}
+
 resource "random_string" "dbServerPassword" {
   length  = 32
   special = false
