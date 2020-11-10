@@ -28,6 +28,10 @@ resource "azurerm_sql_database" "sqldatabase" {
   location            = var.location
   server_name         = lower(var.name)
   edition             = element(values(var.databases), count.index)
+
+  depends_on = [
+    azurerm_sql_server.sqlserver
+  ]
 }
 
 resource "azurerm_sql_firewall_rule" "sqlserver_firewall_rule" {
